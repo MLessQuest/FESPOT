@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <title>CSI Festival List</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Fespot Festival List</a></h1>
+        </div>
+
+        {% for festival in festivals %}
+		{% load staticfiles %}
+            <div>
+                
+                <h1><a href="">{{ festival.ftitle }}</a></h1>
+				<p>published: {{ festival.fdatestart }}</p>
+				<p>More Description: {{festival.fdesc}}</p>
+                <p>Home Page: {{festival.fhomepage|linebreaksbr}}</p>
+				
+            </div>
+        {% endfor %}
+    </body>
+</html>
